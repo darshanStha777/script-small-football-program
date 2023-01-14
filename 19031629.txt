@@ -1,0 +1,365 @@
+#!/bin/bash
+    
+forCountry(){
+#method to display the list of conttries with code
+	echo ""
+	echo "   |------------------------------------------------------------------|"
+	echo "   |                        |-**---LEVEL 1--**--|                     |"
+	echo "   |__________________________________________________________________|"
+	echo "   |         You Enter the first level of this FootBall game.         |"
+	echo "   |         ------------------------------------------------         |"
+	echo "   |                    ----|LET'S PLAY GAME |----                    |"
+	echo "   |                   Choose the best FootBall Team                  |"
+	echo "   |            You can see below all the five country who            |"
+	echo "   |                   played football  in the list.                  |"
+	echo "   |                     |-----------------------|                    |"
+	echo "   |                     |S.N.| Countries | Code |                    |"
+	echo "   |                     |----|-----------|------|                    |"
+	echo "   |                     | 1  | Argentina | ARG  |                    |"
+	echo "   |                     |----|-----------|------|                    |"
+	echo "   |                     | 2  | Brazil    | BRZ  |                    |"
+	echo "   |                     |----|-----------|------|                    |"
+	echo "   |                     | 3  | China     | CHI  |                    |"
+	echo "   |                     |----|-----------|------|                    |"
+	echo "   |                     | 4  | England   | ENG  |                    |"
+	echo "   |                     |----|-----------|------|                    |"
+	echo "   |                     | 5  | Nepal     | NEP  |                    |"
+	echo "   |                     |-----------------------|                    |"
+        echo "   |------------------------------------------------------------------|"	
+        forSelectCntry
+}
+   profile(){
+#display user profile(User name and user ID) with execution date
+	echo ""
+	echo "		   |--------------- WELCOME -------------|"
+	echo "		   |   You are Enter in a FOOTBALL GAME  |"
+	echo "	           |   --------------------------------  |"
+	echo " 		   |      Your User Name: $1        |"
+	echo "	           |       Your User ID:  $2           |"
+	echo "	           |        Execution Date:              |"
+	echo "		   | "$(date)"   |"
+	echo "		   |-------------------------------------|"
+	echo ""
+}
+
+
+#method for gussing  best the countries football team by user 
+forSelectCntry(){
+	echo -e "\n               |------------------------------------------------|"
+	echo -e "               |-   Guess Which Country football team is Best? -|"
+	nation_code=""
+	until [[ $nation_code == BRZ ]]
+	#execute and validate the program until select BRZ contry by user
+	do	echo -e "               |------------------------------------------------|"
+		echo -e "               |-   Please! Enter the country code :- \c"
+		read nation_code
+		echo -e "               |------------------------------------------------|  "
+		case $nation_code in
+		"ENG")  echo ""
+			echo "	|-----------------------Sorry!--------------------|"
+			echo "	| 	 You guessed the worng Football Team!	  |"
+			echo "	|         Please guess another Country team.      |"
+			echo "	|-------------------------------------------------|"
+			echo ""
+		;;
+		"CHI")  echo ""
+			echo "	|-----------------------Sorry!--------------------|"
+			echo "	| 	 You guessed the worng Football Team!	  |"
+			echo "	|         Please guess another Country team.      |"
+			echo "	|-------------------------------------------------|"
+			echo ""
+		;;
+		"BRZ")  echo ""
+			echo "   |-----------------------------|-Congratulation-|---------------------------|"                             
+			echo "   |                  You  guessed the correct FootBall Team.                 |"
+			echo "   |--------------------------------------------------------------------------|"
+			echo "   |       Brazil football team played in the first FIFA world Cup in 1930.   |"
+			echo "   |    Brazil football team winning the FIFA World Cup five times since 1958.|" 
+			echo "   |              Brazil is the best football team in the world.              |"
+			echo "   |--------------------------------------------------------------------------|"
+			echo ""
+			echo "                        |--------------------------------|"
+			echo "                        | Now, You will Enter to Level 2 |"
+			echo "                        |--------------------------------|"
+			echo ""
+		;;
+		"NEP")  echo ""
+			echo "	|-----------------------Sorry!--------------------|"
+			echo "	| 	 You guessed the worng Football Team!	  |"
+			echo "	|         Please guess another Country team.      |"
+			echo "	|-------------------------------------------------|"
+			echo ""
+		;;
+		"ARG")  echo ""
+			echo "	|-----------------------Sorry!--------------------|"
+			echo "	| 	 You guessed the worng Football Team!	  |"
+			echo "	|         Please guess another Country team.      |"
+			echo "	|-------------------------------------------------|"
+			echo ""
+		;;
+		*) echo ""
+		   echo "	|-----------------------| Sorry |-------------------|"
+	  	   echo "	|          Please! Enter valid country code.        |"
+	  	   echo "	|---------------------------------------------------|"
+	  	   echo ""
+	      esac
+	done
+	echo ""
+	for_Player
+	#calling function for_Player
+	for_playerSelection
+	#calling function select_Players
+}
+
+for_Player(){
+#function to give information about five best player
+	echo "            |------------------------------------------------------|"
+	echo "            |                   |-**---LEVEL 2---**-|              |"
+	echo "            |------------------------------------------------------|"
+	echo "            |   Now You Choose Your favourite Players amoung five  |"
+	echo "            |      Here are the show list of Five best players.    |"
+	echo "            |          |---------------------------------|         |"
+	echo "            |          |-S.N.-|-  Player Name -|- Code  -|         |"
+	echo "            |          |------|----------------|---------|         |" 
+	echo "            |          |-  1 -|- Harry Kane   -|-   HK  -|         |"
+	echo "            |          |------|----------------|---------|         |"
+	echo "            |          |-  2 -|-Kiran chemjong-|-   KC  -|         |"
+	echo "            |          |------|----------------|---------|         |"
+	echo "            |          |-  3 -|- Lionel Messi -|-   LM  -|         |"
+	echo "            |          |------|----------------|---------|         |"
+	echo "            |          |-  4 -|- Neymar Junior-|-   NJ  -|         |"
+	echo "            |          |------|----------------|---------|         |"
+	echo "            |          |-  5 -|- Zheng Zhi    -|-   ZZ  -|         |"
+	echo "            |          |---------------------------------|         |"
+        echo "            |                                                      |"
+	echo "            |------------------------------------------------------|"
+        echo ""
+}
+
+for_playerSelection(){
+	echo -e "     |-------------------------------------------------------|"
+        echo -e "     | Choose any three players among five players!!         |"
+        echo -e "     |  Enter the player code (for eg: NJ KC LM) : \c"
+        read pl1 pl2 pl3
+	#initialize three variable with users input 
+        echo -e "     |-------------------------------------------------------|"
+        pl_array=($pl1 $pl2 $pl3)
+	#create array of three parameter 
+        arr_len=${#pl_array[@]}
+	#calculating the length of  array 
+        if [[ ${#pl_array[@]} -eq 3 ]]
+	#checks array lenght and validate of array is equals to 3 or not
+        then
+        	if [[ $pl1 = $pl2 ||  $pl1 = $pl3  ||  $pl2 = $pl3 ]]
+		#check and validate for redundance of the players
+        	then
+        		echo ""
+        		echo "  |--------------------| Sorry |---------------------|   "
+			echo "  |    You cann't Enter duplicate value of player.   |   "
+        		echo "  |--------------------------------------------------|   "
+			echo ""
+        		for_playerSelection
+        		
+        		elif ! [[ $pl1 == "LM" || $pl1 == "NJ"|| $pl1 == "KC" || $pl1 == "ZZ" || $pl1 == "HK" ]]
+			#check whether the any user input matches the above parameter or not
+        		then
+        		echo ""
+        			echo "                  |----------------------| Sorry |-----------------------|"
+				echo "                  |            First Player code is incorrect            |"
+				echo "                  | Please Enter the correct three code of player again. |"
+       		 		echo "                  |------------------------------------------------------|"
+				echo ""
+       		 		for_playerSelection
+				#call for_playerSelection
+       		 		
+        		elif ! [[ $pl2 == "LM" || $pl2 == "NJ"|| $pl2 == "KC" || $pl2 == "ZZ" || $pl2 == "HK" ]]
+			#check whether the any user input matches the above parameter or not
+        		then
+        		echo  ""
+        			echo "                  |----------------------| Sorry |-----------------------|"
+				echo "                  |           Second Player code is incorrect            |"
+				echo "                  | Please Enter the correct three code of player again. |"
+       		 		echo "                  |------------------------------------------------------|"
+				echo ""
+       		 		for_playerSelection
+       		 		
+        		elif ! [[ $pl3 == "LM" || $pl3 == "NJ"|| $pl3 == "KC" || $pl3 == "ZZ" || $pl3 == "HK" ]]
+			#check whether the any user input matches the above parameter or not
+        		then
+        		echo ""
+        			echo "                  |----------------------| Sorry |-----------------------|"
+				echo "                  |            Third Player code is incorrect            |"
+				echo "                  | Please Enter the correct three code of player again. |"
+       		 		echo "                  |------------------------------------------------------|"
+				echo ""
+       		 		for_playerSelection
+        		else 
+       		 		select_three 1
+				#call select_three method by giving the parameter as 1
+       		echo ""
+		echo "            |--------------------------------|"
+       		echo "            |-   Enter three code for players."
+       		echo ""
+       		for_playerSelection 
+       	 	fi 
+       	 else
+	 echo ""
+       	 echo "         |---------------------| Sorry |---------------------|"
+	 echo "         |        Please! Enter three players code only      |" 
+       	 echo "         |---------------------------------------------------|"
+       	 echo ""
+       	 for_playerSelection
+       	 fi       		 	
+}
+
+select_three(){
+#function to validate, allow user to choose one favourite player
+	if [ $1 == 1 ]
+	then
+		echo ""
+		echo -e "|----------------------------------------------------------|"
+		echo -e "| Choose your favourite one Player amoung three player !!  |"
+		 PS3=" Choose  your favourite one player:"
+		 select player_list in $pl1 $pl2 $pl3
+		 do
+		 	case $player_list in
+			#using case stement to choose the user define player by contonous looping 
+		 	"LM") ply_info LM
+		 		break
+		 	;;
+		 	"NJ") ply_info NJ
+		 		break
+		 	;;
+		 	"KC") ply_info KC
+		 		break
+		 	;;
+		 	"ZZ") ply_info ZZ
+		 		break
+		 	;;
+		 	"HK") ply_info HK
+		 		break
+		 	;;
+		 	*) echo ""
+			   echo "        |--------------------------------| Sorry |----------------------------|"
+			   echo "        |                       Your Input is invalid for player              |"
+			   echo "        |  Please select  only 1 or 2 or 3 for details of respective player   |"
+			   echo "        |---------------------------------------------------------------------|"
+		 	   echo ""
+		 	select_three 1
+			#calling sekect_three function by giving user data
+		 	;;
+		 	esac
+		 done
+		 to_continue
+		 else 	echo ""
+		 	echo "	|----------------------------------------------------|"
+		 	echo "	|  Sorry !! Your input is wrong. Enter valid input.  |"
+		 	echo "	|____________________________________________________|"
+		 	for_playerSelection
+			#call for_playerSelection function 
+	fi
+		 	
+		 	
+}
+
+ply_info(){
+#function to display the player profile if exist or not
+	if [[ -f $1 ]]
+	then
+		cat $1
+		#for reading users selected player profile
+		echo ""
+		echo ""
+		echo ""
+		echo "         |------------| Congratulation |------------|"
+		echo "         |       You Complete all the level         |"
+		echo "         |             You won the game.            |"
+		echo "         |------------------------------------------|"
+	else
+	#when file is not found	
+		echo "         |------------------| Sorry |----------------|"
+		echo "         |  Your favorite Player profile is missing  |"
+		echo "         |-------------------------------------------|"
+		echo ""
+		echo "  |-------------------------------------------|"
+		echo "  | Please! Choose best football coutry again |"
+		echo "  |-------------------------------------------|"
+		echo ""
+		echo ""
+		forCountry
+		#call forCountry function
+	fi
+}
+
+to_continue(){
+#function to coutinue the program or not for user
+	echo -e ""
+	echo -e " |--------------------------------------------------------|"
+	echo -e " | Do you want to Play again this game ?                  |"
+	echo -e " | If yes then enter 'yes' or enter 'no' for exit :- \c"
+	read input
+	echo -e " |--------------------------------------------------------|"
+	echo ""
+	if [[ $input == yes ]]
+	then
+		forCountry
+		#calling forCountry function 
+		echo ""
+	else
+		exit
+	fi
+}
+
+passwordkey=7777
+#initializing user passwordkey
+a=0
+b=4
+if [ $# == 2 ]
+#check the lenght of parameter by user is 2 or not
+then
+	while [[ $a -le 3 ]]
+	#condition to execute for 3 attempts
+	do
+		echo -e "	|--------------------------|"		
+		echo -e "	|-Enter the secret key : \c"
+		read -s key
+		#hide the given user input 
+		echo -e "\n	|--------------------------|"
+
+		if [[ $key == $passwordkey ]]
+		then
+			#call profile function with two parameter given by the user
+			profile $1 $2
+			forCountry
+			#call forCountry function
+			break
+		else
+		echo -e "\n"
+		echo -e "   |-----------------------------Warning!--------------------------|"
+		echo -e "   |   Invalid password key. please Enter  the right key again!    |"
+		let "a++"
+		#add variable and initialize
+		echo -e "   |         You have Remaining attemp left:"$(($b-$a))" time                 |"
+		echo -e "   |---------------------------------------------------------------|"	
+		#reminding the attempt left details to user
+		echo ""	
+		fi
+	done
+	elif [ $# == 1 ]
+		then
+		echo ""
+		echo "       |------------------------------Sorry!!!---------------------------|"
+		echo "       |     You Enter only one parameter either User Name or UserID     |"
+ 		echo "       |                     please check and ReEnter:                   |"
+		echo "       |-----------------------------------------------------------------|"
+		echo ""
+else
+	echo ""
+	echo "      |---------------------------Sorry---------------------|"
+	echo "      |            You cann't Enter this football Game.     |"
+	echo "      |          |-------------------------------------|    |"
+	echo "      |           Please ! enter only two parameter.        |"
+	echo "      |      i.e. FirstName(darshan) and user id(12345)     |"
+	echo "      |-----------------------------------------------------|"
+	echo ""
+fi
